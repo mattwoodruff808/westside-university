@@ -20,9 +20,11 @@ export default class Student extends Component {
 
   render() {
     const {studentInfo} = this.state;
+    const {goBack} = this.props.history;
 
     return (
       <div className="box">
+        <button onClick={() => goBack()}>Go Back</button>
         <h1>Student</h1>
         <h1>{studentInfo.first_name} {studentInfo.last_name}</h1>
         <h3>Grade: {studentInfo.grade}</h3>

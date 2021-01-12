@@ -20,6 +20,7 @@ export default class ClassList extends Component {
 
   render() {
     const {students} = this.state;
+    const {goBack} = this.props.history;
     const mappedStudents = students.map((el, i) => {
       return <Link to={`/student/${el.id}`} key={i}>
                 <h3>{el.first_name} {el.last_name}</h3>
@@ -28,6 +29,7 @@ export default class ClassList extends Component {
 
     return (
       <div className="box">
+        <button onClick={() => goBack()}>Go Back</button>
         <h1>{this.props.match.params.class}</h1>
         <h2>ClassList:</h2>
         {mappedStudents}
